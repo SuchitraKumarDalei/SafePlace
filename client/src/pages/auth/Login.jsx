@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { login } from '../../slices/auth-slice'
 import toast from "react-hot-toast";
 
@@ -11,6 +11,7 @@ export default function Login(){
     }
     const[formData,setFormData] = useState(initialState);
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
      function handleOnSubmit(event){
       event.preventDefault();
