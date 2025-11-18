@@ -84,7 +84,7 @@ const login = async(req,res)=>{
             {expiresIn : "1d"}
         );
 
-        res.cookie('token', token, { httponly: true, secure: false, SameSite: 'none' }).json({
+        res.cookie('token', token, { httpOnly: true, secure: false, sameSite: 'none' }).json({
             success: true,
             message: 'Log in successfully',
             user: {
@@ -101,4 +101,26 @@ const login = async(req,res)=>{
     }
 }
 
-module.exports = {redg,login}
+const authMiddleWare = async (req, res, next) => {
+    const token = req.cookies.token;
+    if (!token) {
+        return res.status(401).json({
+            success: false,
+            message: "Unauthorised user"
+        })
+    }
+
+    try {
+        const decode = jwt.verify(token, 'CLIENT_SERVER_KEY');
+        req.user = decode;
+        next();
+    } catch (e) {
+        console.log(e);
+        return res.status(401).json({
+            success: false,
+            message: "Unauthorised user"
+        })
+    }
+}
+
+module.exports = {redg,login,authMiddleWare}
