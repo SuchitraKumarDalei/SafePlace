@@ -3,12 +3,12 @@ export default function Footer(){
          <footer>
             <div className="flex flex-col gap-5 px-[20%] py-10">
                 <div className="border-b py-5">
-                    <h2>Travel with us</h2>
+                    <h2 className="text-gray-600 font-bold text-xl">Travel with us</h2>
                 </div>
                 <div className="flex justify-between">
                     <div className="footer-2 fot-info">
                         <h3 className="font-bold py-2 px-4 rounded-sm bg-gray-300">Dekho Apna Desh!</h3>
-                        <ul>
+                        <ul className="font-semibold text-gray-600 mt-3">
                             <li><a href="https://indianculture.gov.in/">Indian Culture</a></li>
                             <li><a href="https://www.incredibleindia.org/content/incredible-india-v2/en.html">Incredible!ndia</a></li>
                             <li><a href="http://www.indiaculture.nic.in/hi">Ministry of Culture</a></li>
@@ -17,7 +17,7 @@ export default function Footer(){
                     </div>
                     <div className="footer-3 fot-info">
                         <h3 className="font-bold py-2 px-4 rounded-sm bg-gray-300">Visit For More</h3>
-                        <ul className="font-bold">
+                        <ul className="font-semibold text-gray-600 mt-3">
                             <li><a href="https://www.mygov.in/">My Goverment</a></li>
                             <li><a href="https://www.digitalindia.gov.in/">Digital India</a></li>
                             <li><a href="https://tourism.gov.in/">Ministry of Tourism</a></li>
@@ -25,7 +25,7 @@ export default function Footer(){
                     </div>
                     <div className="footer-4 fot-info">
                         <h3 className="font-bold py-2 px-4 rounded-sm bg-gray-300">Contact Us</h3>
-                        <ul>
+                        <ul className="font-semibold text-gray-600 mt-3">
                             <li><a href="https://github.com/SuchitraKumarDalei">Aditya</a></li>
                             <li><a href="https://github.com/adityaprasad365">Suchitra</a></li>
                         </ul>

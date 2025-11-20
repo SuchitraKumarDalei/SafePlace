@@ -14,6 +14,7 @@ import UserLayout from './components/UserLayout';
 import VerifierLayout from './components/VerifierLayout';
 import HeroLayout from './components/HeroLayout';
 import Footer from './components/Footer';
+import Header from './components/Header';
 
 function App() {
   const dispatch = useDispatch();
@@ -24,10 +25,10 @@ function App() {
 
   return (
     <div className='flex flex-col overflow-hidden bg-white'>
-        {/* Header */}
+        <Header/>
         <Toaster position="top-right" />
         <Routes>
-          {/*<Route path='/' element={<GeoFencing/>}></Route>*/}
+          <Route path='/geofence' element={<GeoFencing/>}></Route>
           <Route path='/' element={<HeroLayout/>}></Route>
 
           <Route path='/auth' element={<AuthLayout/>}>
@@ -46,11 +47,8 @@ function App() {
 
           <Route path='*' element={<PageNotFound/>}></Route>
         </Routes>
-
         <Footer/>
     </div>
-
-    
   )
 }
 
